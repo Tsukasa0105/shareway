@@ -1,0 +1,25 @@
+<div class="col-sm-12">
+<table class="table">
+  <thead>
+  </thead>
+  <tbody class="ranking_index">
+    <% ways.each_with_index do |way, i| %>
+      <tr>
+        <th>
+          <p class="text-center"><i class="fas fa-crown"></i><%= i+1 %>位</p>
+        </th>
+        <th>
+          <%= render 'ways/image', way: way %>
+        </th>
+        <td>
+          <%= link_to way.name, way_path(way) %>
+          <span><i class="fas fa-star"></i><%= way.favorite_ways_counts(way) %></span>
+        </td>
+        <td class="ranking_decoration">
+          <%= render 'favorite_ways/favorite_way_button', way: way %>
+        </td>
+      </tr>
+    <% end %>           
+  </tbody>
+</table>
+</div>

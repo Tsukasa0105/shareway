@@ -1,0 +1,201 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.jumbotron-extend {
+    position: relative;
+    height: 100vh;
+    min-height: 300px;
+    background: url(/assets/1.png) no-repeat center center;
+    background-size: cover;
+}
+
+.jumbotron-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+a:link { color: #003333; }
+a:visited { color: #003333; }
+
+.post {/*親div*/
+    position: relative;
+    top: 20px;
+  }
+
+.post a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /*以下装飾*/
+  margin:0;/*余計な隙間を除く*/
+  font-size: 20px;/*文字サイズ*/
+  border: solid gray 2px; /*線で囲う*/
+  padding: 7px;/*文字と線の間の余白*/
+  color: gray;/*文字色*/
+  text-decoration: none;/*下線を表示させない*/
+  }
+.post img {
+  border: 2px #C0C0C0 solid;
+  width: 100%;
+  }
+  
+ .find {/*親div*/
+    position: relative;
+    top: 20px;
+  }
+
+.find a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /*以下装飾*/
+  margin:0;/*余計な隙間を除く*/
+  font-size: 20px;/*文字サイズ*/
+  border: solid gray 2px; /*線で囲う*/
+  padding: 7px;/*文字と線の間の余白*/
+  color: gray;/*文字色*/
+  text-decoration: none;/*下線を表示させない*/
+  }
+.find img {
+  border: 2px #C0C0C0 solid;
+  width: 100%;
+  }
+  
+.favorite_way_button {
+      float:right;
+}
+
+.follow_button {
+      float:right;
+}
+
+.favorite_hobby_button {
+      float:right;
+}
+  
+.created_at {
+    float:right;
+}
+
+.ways_thead {
+    background-color: #CCFFCC
+}
+
+.ways_body th {
+    width:  70px;
+}
+
+.ways_body img {
+  width: 100%
+}
+
+.navbar img {
+  width: 50%
+}
+
+.media img {
+  width: 50%
+}
+
+.users_body th {
+  width:  200px;
+}
+
+.users_body img {
+  width: 50%
+}
+.ranking_index th {
+  width:  100px;
+}
+
+.ranking_index span {
+  float:right;
+}
+
+.ranking_index img {
+  width: 100%
+}
+
+.way_icon {
+  width: 120px;
+}
+
+.way_icon img {
+  height: 100%
+}
+
+.heading h2{
+	position: relative;
+	padding: 10px 20px;
+	font-size:20px;
+	text-align:center;
+	border-top: solid 1px #325A8C;
+	border-bottom: solid 1px #325A8C;
+}
+.heading h2::before,
+.heading h2::after{
+	content: '';
+	position: absolute;
+	top: -10px;
+	width: 1px;
+	height: calc(100% + 20px);
+	background-color: #325A8C;
+}
+.heading h2::before{left: 10px;}
+.heading h2::after{right: 10px;}
+
+.ranking_decoration {
+  width:  70px;
+}
+
+.card-body img {
+  width: 100%
+}
+
+.user_show_image img {
+  width:100%
+}
+
+.user_show_image {
+  padding-bottom: 100px
+}
+
+
+.way_show_image img {
+  width:100%
+}
+
+.way_show_userimage img {
+  width:100%
+}
+
+.way_show_username p {
+  padding:15px  0px;
+  top:50%;
+}
+
+.way_show_name {
+  padding:25px  0px;
+}
+
+.way_edit_button {
+  float:right;
+  padding-top:40px;
+  padding-left:100px;
+}

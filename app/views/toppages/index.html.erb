@@ -1,0 +1,47 @@
+<% if logged_in? %>
+  <div class="row">
+    <div class="col-sm-8">
+      <table class="table">
+          <%= render 'ways/ways', ways: @ways %>
+          <%= paginate @ways %>
+      </table>
+    </div>
+    <div class="col-sm-4 text-center">
+      <div class=" post">
+          <img src="assets/post.png" />
+          <%= link_to '新しい投稿', new_way_path, class: 'btn btn-lg' %> 
+      </div>    
+      <br><br>
+     <!-- <div class=" find"> -->
+     <!--     <img src="assets/find.png" /> -->
+     <!--= link_to '　探す　', root_path, class: 'btn btn-lg' --!>
+     <!-- </div> -->
+    </div>
+  </div>
+  <br><br>
+  <div class="col-sm-8">
+    <h3>趣味ランキング</h3>
+  </div>
+  <div class="col-sm-4">
+    <%= link_to 'もっと見る', hobbies_ranking_toppages_path %>
+  </div>
+    <%= render 'hobbies/ranking', hobbies: @all_hobbies_ranks %>
+  <br>
+  <div class="col-sm-8">
+    <h3>楽しみ方ランキング</h3>
+  </div>
+  <div class="col-sm-4">
+    <%= link_to 'もっと見る', ways_ranking_toppages_path %>
+  </div>
+    <%= render 'ways/ranking', ways: @all_ways_ranks %>
+<% else %>
+  <div class="center jumbotron jumbotron-extend">
+    <div class="container-fluid text-center jumbotron-container">
+      <h3>「気になる趣味はあるけど楽しみ方が…」</h3>
+      <h3>「とっておきの趣味を知ってほしい！」</h3>
+      <h3>こんなこと思ったことありませんか？</h3>
+      <h2>ShareWayで叶えましょう!</h2>
+      <%= link_to '始める', signup_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
+<% end %>

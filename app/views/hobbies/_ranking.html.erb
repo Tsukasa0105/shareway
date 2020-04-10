@@ -1,0 +1,22 @@
+<div class="col-sm-12">
+<table class="table">
+  <thead>
+  </thead>
+  <tbody class="ranking_index">
+    <% hobbies.each_with_index do |hobby, i| %>
+      <tr>
+        <th>
+          <p class="text-center"><i class="fas fa-crown"></i><%= i+1 %>位</p>
+        </th>
+        <td>
+          <%= link_to hobby.name, hobby_path(hobby) %>
+          <span><i class="fas fa-star"></i><%= hobby.favorite_hobbies_counts(hobby) %></span>  
+        </td>
+        <td class="ranking_decoration">
+          <%= render 'favorite_hobbies/favorite_hobby_button', hobby: hobby %>  
+        </td>
+      </tr>
+    <% end %>           
+  </tbody>
+</table>
+</div>

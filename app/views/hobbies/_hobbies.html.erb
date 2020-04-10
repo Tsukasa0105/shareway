@@ -1,0 +1,18 @@
+<table class="table">
+    <thead class="hobbies_thead">
+    </thead>
+    <% hobbies.each do |hobby| %>
+      <tbody class="hobbies_body">
+        <tr>
+          <th class="text-left">
+            <span><%= hobby.name %></span>            
+          </th>
+          <td>
+            <div>
+              <%= render 'favorite_hobbies/favorite_hobby_button', hobby: hobby %>
+            </div>
+          </td>
+        </tr>        
+      </tbody>
+    <% end %>
+</table>

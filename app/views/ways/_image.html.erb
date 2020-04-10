@@ -1,0 +1,5 @@
+<% if way.image? %>
+  <span><%= image_tag way.image.url %></span>
+<% else %>
+  <span><%= image_tag "/assets/default_way.png" %></span>
+<% end %>

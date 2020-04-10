@@ -1,0 +1,28 @@
+  <div class="row">
+    <aside class="offset-sm-1 col-sm-10 offset-sm-1">
+      <%= form_with(model: @way, local: true) do |f| %>
+          <%= render 'layouts/error_messages', model: f.object %>
+          <div class="form-group">
+            <%= f.label :name, '題名' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+                <%= f.label :hobby_id, '関連する趣味' %>
+                <%= f.collection_select :hobby_id, Hobby.all, :id, :name %>
+                <%= link_to '趣味の項目を追加', new_hobby_path, class: 'btn btn-lg btn-light' %>
+        　</div>
+
+          <div class="form-group">
+            <%= f.label :image, 'トップ画像' %>
+            <%= f.file_field :image, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :content, '内容' %>
+            <%= f.text_area :content, class: 'form-control', rows: 50 %>
+          </div>
+          <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </aside>
+  </div>

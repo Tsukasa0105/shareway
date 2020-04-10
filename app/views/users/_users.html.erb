@@ -1,0 +1,28 @@
+
+<table class="table">
+    <thead class="users_thead">
+    </thead>
+    <% users.each do |user| %>
+      <tbody class="users_body">
+        <% if user %>
+          <tr>
+            <th class="text-left">
+              <%= render 'users/image', user: user %>
+              <span><%= link_to user.name, user_path(user) %></span>   
+            </th>
+            <td>
+              <div>
+                <%= render 'relationships/follow_button', user: user %>
+              </div>
+            </td>
+          </tr>
+        <% else %>
+          <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+          </tr>
+        <% end %>
+      </tbody>
+    <% end %>
+</table>

@@ -1,0 +1,69 @@
+<header class="mb-4">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-success">
+   <a class="navbar-brand" href="/">ShareWay</a> 
+  </nav>
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="col-sm-1">
+      <% if logged_in? %>
+        <%= render 'users/image', user: current_user %>
+        <span class="text-dark"><%= link_to current_user.name, root_path %></span>
+      <% end %>      
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end col-sm-11 flex-column" id="navbarSupportedContent">
+      <ul class="navbar-nav w-100 nav-justified">
+        <% if logged_in? %>
+          <li class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">ユーザー</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-item"><%= link_to 'すべてのユーザー', users_path %></div> 
+              <div class="dropdown-item"><%= link_to 'フォロー', followings_user_path(current_user) %></div>
+              <div class="dropdown-item"><%= link_to 'フォロワー', followers_user_path(current_user) %></div>
+            </div>
+          <li class="nav-item"><%= link_to 'お気に入りの趣味', like_hobbies_user_path(current_user) %></li>
+          <li class="nav-item"><%= link_to 'お気に入りの楽しみ方', ways_path %></li>
+          <li class="nav-item"><%= link_to '趣味一覧', hobbies_path %></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">アカウント</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-item"><%= link_to '設定', edit_user_path(current_user) %></div> 
+              <div class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete %></div>
+            </div>
+        <% else %>
+          <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

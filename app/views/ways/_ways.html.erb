@@ -1,0 +1,26 @@
+<table class="table">
+    <thead class="ways_thead">
+    </thead>
+    <% ways.each do |way| %>
+      <tbody class="ways_body">
+        <tr>
+          <th class="text-center">
+            <%= render 'users/image', user: way.user %>
+            <span><%= link_to way.user.name, user_path(way.user) %></span>            
+          </th>
+          <td class="way_icon">
+            <div>
+              <%= render 'ways/image', way: way %>
+            </div>
+          </td>
+          <td>
+            <div>
+              <p style="display: inline-block"><%= link_to way.name, way_path(way) %></p>
+              <%= render 'favorite_ways/favorite_way_button', way: way %>
+              <span class="created_at"><%= way.created_at.to_s(:datetime) %>　　</span>
+            </div>
+          </td>
+        </tr>        
+      </tbody>
+    <% end %>
+</table>
