@@ -2,6 +2,8 @@ class ImageUploader < CarrierWave::Uploader::Base
 
  # リサイズしたり画像形式を変更するのに必要
   include CarrierWave::RMagick
+  
+ storage :file
 
  # 画像の上限を200pxにする
    process :resize_to_limit => [200, 200]
