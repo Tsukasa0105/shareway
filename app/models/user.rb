@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :like_hobbies, through: :favorite_hobbies, source: :hobby
   has_many :favorite_ways
   has_many :like_ways, through: :favorite_ways, source: :way
-  has_one_attached :avatar
+  has_one_attached :image
   
   mount_uploader :image, ImageUploader
   
