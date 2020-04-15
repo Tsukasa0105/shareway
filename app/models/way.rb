@@ -3,7 +3,6 @@ class Way < ApplicationRecord
   belongs_to :hobby
   
   has_many :favorite_ways, dependent: :destroy
-  has_one_attached :image
   
   validates :content, presence: true
   validates :name, presence: true
