@@ -8,7 +8,11 @@
     </div>
     <div class="col-sm-4 text-center">
       <div class=" post">
-          <img src="assets/post.png" />
+          <% if Rails.env.development? %>
+            <img src="assets/post.png" />
+          <% else %>
+            <img src="https://res.cloudinary.com/hadnz0ql1/image/upload/v1586950818/post.png" />
+          <% end %>
           <%= link_to '新しい投稿', new_way_path, class: 'btn btn-lg' %> 
       </div>    
       <br><br>
