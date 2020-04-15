@@ -1,5 +1,9 @@
 <% if user.image? %>
   <span><%= image_tag user.image.url %></span>
 <% else %>
-  <span><%= image_tag "/assets/default_user.png" %></span>
+  <% if Rails.env.development? %>
+    <span><%= image_tag "/assets/default_user.png" %></span>
+  <% else %>
+    <span><%= image_tag "https://res.cloudinary.com/hadnz0ql1/image/upload/v1586950849/default_user.png" %></span>
+  <% end %>
 <% end %>   
