@@ -1,26 +1,29 @@
 <% if logged_in? %>
   <div class="row">
     <div class="col-sm-8">
+      <%= link_to new_way_path, class: 'btn btn-lg' do %>
+        <i class='fas fa-plus'></i>新しい投稿
+      <% end %>
       <table class="table">
           <%= render 'ways/ways', ways: @ways %>
           <%= paginate @ways %>
       </table>
     </div>
-    <div class="col-sm-4 text-center">
-      <div class=" post">
-          <% if Rails.env.development? %>
-            <img src="assets/post.png" />
-          <% else %>
-            <img src="https://res.cloudinary.com/hadnz0ql1/image/upload/v1586950818/post.png" />
-          <% end %>
-          <%= link_to '新しい投稿', new_way_path, class: 'btn btn-lg' %> 
-      </div>    
-      <br><br>
+    <!-- <div class="col-sm-4 text-center"> -->
+      <!-- <div class=" post"> -->
+          <!-- <% if Rails.env.development? %> -->
+            <!-- <img src="assets/post.png" /> -->
+          <!-- <% else %> -->
+            <!-- <img src="https://res.cloudinary.com/hadnz0ql1/image/upload/v1586950818/post.png" /> -->
+          <!-- <% end %> -->
+          <!-- <%= link_to '新しい投稿', new_way_path, class: 'btn btn-lg' %> -->
+      <!-- </div> -->   
+      <!-- <br><br> -->
      <!-- <div class=" find"> -->
      <!--     <img src="assets/find.png" /> -->
      <!--= link_to '　探す　', root_path, class: 'btn btn-lg' --!>
      <!-- </div> -->
-    </div>
+    <!-- </div> -->
   </div>
   <br><br>
   <div class="col-sm-8">
