@@ -1,14 +1,14 @@
   <% if current_user.favorite_way?(way) %>
     <div style="display:inline-block" class="favorite_way_button">
       <%= form_with(model: current_user.favorite_ways.find_by(way_id: way.id), local: true, method: :delete) do |f| %>
-        <%= hidden_field_tag :way_id, way.id, id: "way_id#{way.id}" %>
+        <%= hidden_field_tag :way_id, way.id, id: "way_id_#{way.id}" %>
         <%= f.submit 'Unfavorite', class: 'btn btn-secondary btn-sm' %>
       <% end %>
     </div>
   <% else %>
     <div style="display:inline-block" class="favorite_way_button">
       <%= form_with(model: current_user.favorite_ways.build, local: true) do |f| %>
-        <%= hidden_field_tag :way_id, way.id, id: "way_id#{way.id}" %>
+        <%= hidden_field_tag :way_id, way.id, id: "way_id_#{way.id}" %>
         <%= f.submit 'Favorite', class: 'btn btn-light btn-sm' %>
       <% end %>
     </div>
