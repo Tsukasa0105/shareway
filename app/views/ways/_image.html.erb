@@ -1,9 +1,9 @@
 <% if way.image? %>
-  <span><%= image_tag way.image.url alt=" " %></span>
+  <span><%= image_tag way.image.url, alt:"画像なし" %></span>
 <% else %>
   <% if Rails.env.development? %>
-    <span><%= image_tag "/assets/default_way.png" alt=" " %></span>
+    <span><%= image_tag "/assets/default_way.png", alt:"画像なし"  %></span>
   <% else %>
-    <span><%= image_tag "https://res.cloudinary.com/hadnz0ql1/image/upload/v1586950818/default_way.png" alt=" " %></span>
+    <span><%= image_tag "https://res.cloudinary.com/hadnz0ql1/image/upload/v1586950818/default_way.png", alt:"画像なし" %></span>
   <% end %>  
 <% end %>
