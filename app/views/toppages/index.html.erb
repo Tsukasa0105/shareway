@@ -4,10 +4,8 @@
       <%= link_to new_way_path, class: 'btn btn-lg' do %>
         <i class='fas fa-plus'></i>新しい投稿
       <% end %>
-      <table class="table">
-          <%= render 'ways/ways', ways: @ways %>
-          <%= paginate @ways %>
-      </table>
+      <%= render 'ways/ways', ways: @ways %>
+      <%= paginate @ways %>
     </div>
     <!-- <div class="col-sm-4 text-center"> -->
       <!-- <div class=" post"> -->
