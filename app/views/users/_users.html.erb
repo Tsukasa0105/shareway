@@ -8,8 +8,10 @@
           <tr>
             <th class="text-left">
               <%= render 'users/image', user: user %>
-              <span><%= link_to user.name, user_path(user) %></span>   
             </th>
+            <td>
+              <span><%= link_to user.name, user_path(user) %></span>
+            </td>
             <td>
               <div>
                 <%= render 'relationships/follow_button', user: user %>

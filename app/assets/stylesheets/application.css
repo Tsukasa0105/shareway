@@ -44,9 +44,9 @@ a:visited { color: #003333; }
   /*以下装飾*/
   margin:0;/*余計な隙間を除く*/
   font-size: 20px;/*文字サイズ*/
-  border: solid gray 2px; /*線で囲う*/
+  border: solid black 2px; /*線で囲う*/
   padding: 7px;/*文字と線の間の余白*/
-  color: gray;/*文字色*/
+  color: black;/*文字色*/
   text-decoration: none;/*下線を表示させない*/
   }
 .post img {
@@ -97,16 +97,8 @@ a:visited { color: #003333; }
     background-color: #CCFFCC
 }
 
-.ways_body th {
-    width:  70px;
-}
-
-.ways_body img {
-  width: 100%
-}
-
 .navbar img {
-  width: 50%
+  width: 50px
 }
 
 .media img {
@@ -120,6 +112,14 @@ a:visited { color: #003333; }
 .users_body img {
   width: 50%
 }
+
+.users_body tr td span {
+  width:600px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .ranking_index th {
   width:  100px;
 }
@@ -130,14 +130,6 @@ a:visited { color: #003333; }
 
 .ranking_index img {
   width: 100%
-}
-
-.way_icon {
-  width: 120px;
-}
-
-.way_icon img {
-  height: 100%
 }
 
 .heading h2{
@@ -186,16 +178,83 @@ a:visited { color: #003333; }
 }
 
 .way_show_username p {
-  padding:15px  0px;
-  top:50%;
+  max-width: 400px; 
+  margin: 0 auto; 
 }
 
-.way_show_name {
-  padding:25px  0px;
+.way_show_name h4 {
+  width:700px;
+  margin: 0 auto;
+  float:left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; 
 }
 
 .way_edit_button {
+  width:100px;
   float:right;
   padding-top:40px;
-  padding-left:100px;
+}
+
+.way_show_favorite {
+  width:100px;
+  float:right;
+  padding-top:70px;
+}
+
+.ways_body th img {
+  width:50px;
+}
+
+.ways_body td img {
+  width:70px;
+}
+
+.ways_body tr th p {
+  width:50px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ways_body tr td p {
+  width:400px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ways_image p {
+  width:100px;
+}
+
+.ways_body th {
+  width: 10%; /* 幅は親要素の80% */
+  max-width: 100px; /* 幅は最大500pxまでしか広げない */
+  margin: 0 auto; /* 左右をauto指定にして左右中央揃えに */
+}
+
+.ways_body td {
+  max-width: 400px; 
+  margin: 0 auto; 
+}
+
+.ranking_index tr td p {
+  width:500px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; 
+}
+
+.navbar_user_image p {
+  width:50px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; 
+}
+
+.navbar_user_image {
+  margin: 0 auto;
+  padding-top:10px;
 }

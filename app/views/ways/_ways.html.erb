@@ -6,9 +6,9 @@
         <tr>
           <th class="text-center">
             <%= render 'users/image', user: way.user %>
-            <span><%= link_to way.user.name, user_path(way.user) %></span>            
+            <p><%= link_to way.user.name, user_path(way.user) %></p>            
           </th>
-          <td class="way_icon">
+          <td>
             <div>
               <%= render 'ways/image', way: way %>
             </div>

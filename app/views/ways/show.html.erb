@@ -3,13 +3,17 @@
         <%= render 'ways/image', way: @way %>
     </div>
     <div class="col-sm-8 way_show_name">
-        <h2><%= @way.name %></h2>
+        <h4><%= @way.name %></h4>
     </div>
     <% if @user==current_user %>
         <div class="col-sm-2 way_edit_button">
-            <%= link_to '編集', edit_way_path, class: 'btn btn-sm btn-light' %>
+            <%= link_to '編集', edit_way_path, class: 'btn btn-sm btn-primary' %>
             <%= link_to "削除", @way, method: :delete, data: { confirm: "削除してよろしいですか?" }, class: 'btn btn-danger btn-sm' %>
         </div>
+    <% else %>
+        <div class="col-sm-2 way_show_favorite">
+            <%= render 'favorite_ways/favorite_way_button', way: @way %>
+        </div>    
     <% end %>
 </div>
 <Hr Width="100%">
@@ -18,7 +22,7 @@
       <%= render 'users/image', user: @user %>
     </div>
     <div class="col-sm-2 way_show_username">
-      <p><%= @user.name %></p>   
+        <p><%= link_to @way.user.name, user_path(@way.user) %></p> 
     </div> 
 </div>
 

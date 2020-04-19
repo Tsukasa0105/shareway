@@ -12,11 +12,18 @@
           <%= render 'ways/image', way: way %>
         </th>
         <td>
-          <%= link_to way.name, way_path(way) %>
-          <span><i class="fas fa-star"></i><%= way.favorite_ways_counts(way) %></span>
+          <p><%= link_to way.name, way_path(way) %></p>
+        </td>
+        <td>
+          <span><i class="fas fa-star"></i><%= way.favorite_ways_counts(way) %></span>          
         </td>
         <td class="ranking_decoration">
-          <%= render 'favorite_ways/favorite_way_button', way: way %>
+          <% if way.user==current_user %>
+            <%= link_to '編集', edit_way_path(way), class: 'btn btn-sm btn-primary' %>
+            <%= link_to "削除", @way, method: :delete, data: { confirm: "削除してよろしいですか?" }, class: 'btn btn-danger btn-sm' %>
+          <% else %>
+            <%= render 'favorite_ways/favorite_way_button', way: way %>
+          <% end %>
         </td>
       </tr>
     <% end %>           
