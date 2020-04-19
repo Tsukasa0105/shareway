@@ -1,11 +1,11 @@
 <% if logged_in? %>
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-9">
       <h3>最近</h3>
       <%= render 'ways/ways', ways: @ways %>
       <%= paginate @ways %>
     </div>
-    <div class="offset-sm-1 col-sm-3 text-center">
+    <div class="col-sm-3 text-center">
       <div class="post">
           <% if Rails.env.development? %>
             <img src="assets/post.png" />

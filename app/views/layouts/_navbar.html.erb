@@ -6,7 +6,7 @@
     <div class="col-sm-1 navbar_user_image">
       <% if logged_in? %>
         <p class="text-center"><%= render 'users/image', user: current_user %></p>
-        <p class="text-dark text-center"><%= link_to current_user.name, root_path %></p>
+        <p class="text-dark text-center"><font size="2"><%= link_to current_user.name, root_path %></font></p>
       <% end %>      
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
