@@ -5,8 +5,8 @@
       <tbody class="ways_body">
         <tr>
           <th class="text-center">
-            <%= render 'users/image', user: way.user %>
-            <p><%= link_to way.user.name, user_path(way.user) %></p>            
+            <p class="text-center"><%= render 'users/image', user: way.user %></p>
+            <p class="text-center"><%= link_to way.user.name, user_path(way.user) %></p>            
           </th>
           <td>
             <div>

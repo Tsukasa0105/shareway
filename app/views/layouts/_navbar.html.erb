@@ -5,7 +5,7 @@
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="col-sm-1 navbar_user_image">
       <% if logged_in? %>
-        <%= render 'users/image', user: current_user %>
+        <p class="text-center"><%= render 'users/image', user: current_user %></p>
         <p class="text-dark text-center"><%= link_to current_user.name, root_path %></p>
       <% end %>      
     </div>
