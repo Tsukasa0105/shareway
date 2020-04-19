@@ -5,7 +5,7 @@ class Way < ApplicationRecord
   has_many :favorite_ways, dependent: :destroy
   
   validates :content, presence: true, length: { maximum: 4000 }
-  validates :name, presence: true, length: { minimum: 40 }
+  validates :name, presence: true, length: { maximum: 40 }
   
   mount_uploader :image, ImageUploader
   

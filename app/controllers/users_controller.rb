@@ -33,7 +33,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
+    @user = User.new(user_params)
+    if @user.update(user_params)
       flash[:success] = 'ユーザー情報を変更しました'
       redirect_to root_path
     else
@@ -79,6 +80,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :image, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :image)
   end
 end
