@@ -261,3 +261,7 @@ a:visited { color: #003333; }
   margin: 0 auto;
   padding-top:10px;
 }
+
+.see_more p {
+  float:right;
+}
