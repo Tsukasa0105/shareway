@@ -7,7 +7,7 @@
   <% else %>
     <%= form_with(model: current_user.favorite_hobbies.build, local: true) do |f| %>
       <%= hidden_field_tag :hobby_id, hobby.id, id: "hobby_id_#{hobby.id}" %>
-      <%= f.submit 'お気に入り', class: 'btn btn-light btn-sm' %>
+      <%= f.submit '　お気に入り　', class: 'btn btn-light btn-sm' %>
     <% end %>
   <% end %>  
 </div>

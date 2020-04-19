@@ -152,8 +152,8 @@ a:visited { color: #003333; }
 .heading h2::before{left: 10px;}
 .heading h2::after{right: 10px;}
 
-.ranking_decoration {
-  width:  100px;
+.ranking_decoration  {
+  width:  50px;
 }
 
 .card-body img {
