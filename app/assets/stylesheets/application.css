@@ -168,6 +168,9 @@ a:visited { color: #003333; }
   padding-bottom: 100px
 }
 
+.user_show_followbutton {
+  width:65%;
+}
 
 .way_show_image img {
   width:100%
