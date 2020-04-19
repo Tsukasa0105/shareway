@@ -211,11 +211,11 @@ a:visited { color: #003333; }
 }
 
 .ways_body td img {
-  width:70px;
+  width:100px;
 }
 
 .ways_body tr th p {
-  width:100px;
+  width:120px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -233,7 +233,7 @@ a:visited { color: #003333; }
 }
 
 .ways_body th {
-  width: 10%; /* 幅は親要素の80% */
+  width: 120px; /* 幅は親要素の80% */
   max-width: 100px; /* 幅は最大500pxまでしか広げない */
   margin: 0 auto; /* 左右をauto指定にして左右中央揃えに */
 }
@@ -251,7 +251,7 @@ a:visited { color: #003333; }
 }
 
 .navbar_user_image p {
-  width:100px;
+  width:120px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden; 
