@@ -1,49 +1,20 @@
 <div class="row">
-  <aside class="offset-sm-4 col-sm-4 offset-sm-4 user_show_image">
+  <div class="offset-sm-4 col-sm-4 offset-sm-4 user_show_image">
         <%= render 'users/image', user: @user %>
         <h3 class="text-center"><%= @user.name %></h3>
         <div class="user_show_followbutton">
           <%= render 'relationships/follow_button', user: @user %>  
         </div>
-  </aside>
+  </div>
 </div>
 <div class="row">
-  <div class="offset-sm-1 col-sm-5">
-    <h4 class="user_show_p">フォロー</h4>
-    <%= render 'users', users: @followings %>  
+  <div style="test-center" class="offset-sm-4 col-sm-2 button_user_show">
+    <%= link_to 'フォロー', followings_user_path(@user), class: 'btn btn-light btn-lg' %>
   </div>
-  <div class="offset-sm-1 col-sm-5">
-    <h4 class="user_show_p">フォロワー</h4>
-    <%= render 'users', users: @followers %>
+  <div style="test-center" class="col-sm-2 button_user_show">
+    <%= link_to 'フォロワー', followers_user_path(@user), class: 'btn btn-light btn-lg' %>
   </div>
 </div>
-
-<h4 class="user_show_p">お気に入りの趣味</h4>
-<%= render 'hobbies/hobbies', hobbies: @favorite_hobbies %>
-<h4 class="user_show_p">お気に入りの楽しみ方</h4>
-<table class="table">
-    <thead class="ways_thead">
-    </thead>
-    <% @favorite_ways.each do |way| %>
-      <tbody class="ways_body">
-        <tr>
-          <th class="text-center">
-            <p class="text-center"><%= render 'users/image', user: way.user %></p>
-            <p class="text-center"><font size="2"><%= link_to way.user.name, user_path(way.user) %></font></p>            
-          </th>
-          <td>
-            <div>
-              <%= render 'ways/image', way: way %>
-            </div>
-          </td>
-          <td>
-            <div>
-              <p style="display: inline-block"><%= link_to way.name, way_path(way) %></p>
-              <%= render 'favorite_ways/favorite_way_button', way: way %>
-              <span class="created_at"><%= way.created_at.to_s(:datetime) %>　　</span>
-            </div>
-          </td>
-        </tr>        
-      </tbody>
-    <% end %>
-</table>
+<br><br>
+<h4 class="user_show_p">投稿</h4>
+<%= render 'ways/ways', ways: @user.ways %>
