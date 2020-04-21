@@ -19,6 +19,7 @@ Rails.application.routes.draw do
           get :followers
           get :like_hobbies
           get :like_ways
+          get :edit_password
         end
     end
     
