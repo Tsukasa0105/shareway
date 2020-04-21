@@ -8,11 +8,11 @@
   </div>
 </div>
 <div class="row">
-  <div style="test-center" class="offset-sm-4 col-sm-2 button_user_show">
-    <%= link_to 'フォロー', followings_user_path(@user), class: 'btn btn-light btn-lg' %>
+  <div style="test-center" class="offset-sm-2 col-sm-4 button_user_show">
+    <%= link_to 'フォローしているユーザーを見る', followings_user_path(@user), class: 'btn btn-light btn-lg' %>
   </div>
-  <div style="test-center" class="col-sm-2 button_user_show">
-    <%= link_to 'フォロワー', followers_user_path(@user), class: 'btn btn-light btn-lg' %>
+  <div style="test-center" class="col-sm-4 button_user_show">
+    <%= link_to '　　　フォロワーを見る　　　', followers_user_path(@user), class: 'btn btn-light btn-lg' %>
   </div>
 </div>
 <br><br>
