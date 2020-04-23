@@ -31,10 +31,6 @@ class UsersController < ApplicationController
   def edit
     @user = current_user
   end
-  
-  def edit_password
-    @user = current_user
-  end
 
   def update
     @user = User.find(params[:id])
@@ -50,11 +46,13 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
 
-    flash[:success] = 'Taskは正常に削除されました'
+    flash[:success] = '正常に削除されました'
     redirect_to tasks_url
   end
 
+
   def destroy
+    
   end
   
   def followings

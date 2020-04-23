@@ -30,7 +30,6 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">アカウント</a>
             <div class="dropdown-menu">
               <div class="dropdown-item"><%= link_to '設定', edit_user_path(current_user) %></div> 
-              <div class="dropdown-item"><%= link_to 'パスワード変更', edit_password_user_path(current_user) %></div> 
               <div class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete %></div>
             </div>
         <% else %>
