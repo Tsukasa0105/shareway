@@ -4,7 +4,18 @@ ja:
       user: ユーザー
     attributes:
       user:
-        name: 名前
-        email: メールアドレス
+        name: ユーザ名
+        email: Email
+        image: トップ画像
         password: パスワード
         password_confirmation: パスワード確認
+    
+    models:
+      way: 楽しみ方
+    attributes:
+      way:
+        name: 題名
+        hobby_id: 関連する趣味
+        image: トップ写真
+        content: 内容
+    

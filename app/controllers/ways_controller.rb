@@ -1,5 +1,6 @@
 class WaysController < ApplicationController
   before_action :correct_user, only: [:edit, :destroy]
+  before_action :require_user_logged_in, only: [:index, :show, :new, :edit, :search]
 
   def index
     @like_ways=current_user.like_ways.order(id: :desc).page(params[:page])
