@@ -46,6 +46,10 @@ class WaysController < ApplicationController
     redirect_to root_url
   end
   
+  def search 
+    @ways = Way.search(params[:search])
+  end
+  
   private
   
   def way_params
@@ -58,6 +62,5 @@ class WaysController < ApplicationController
       redirect_to root_url
     end
   end
-  
 end
 

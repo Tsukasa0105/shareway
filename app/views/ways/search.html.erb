@@ -1,0 +1,11 @@
+
+<%= form_with url: search_ways_path, method: :get, local: true do |f| %>
+  <div class='form-group'>
+    <%= f.label :search, 'キーワード' %>
+    <%= f.text_field :search, class: 'form-control' %> 
+  </div>
+ 
+  <%= f.submit '検索', class: 'btn btn-light btn-block' %> 
+<% end %>
+<br><br>
+<%= render 'ways', ways: @ways %>

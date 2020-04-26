@@ -13,4 +13,11 @@ class Way < ApplicationRecord
     FavoriteWay.where(way_id: way.id).count
   end
   
+  def self.search(search)
+    if search
+      Way.where(['content LIKE ?', "%#{search}%"])
+    else
+      Way.all
+    end
+  end 
 end

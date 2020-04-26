@@ -1,8 +1,8 @@
 <header class="mb-4">
-  <nav class="navbar navbar-expand-sm navbar-dark bg-success">
-   <a class="navbar-brand" href="/">ShareWay</a> 
-  </nav>
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="col-sm-1 navbar_logo">
+    　<a class="navbar-brand" href="/">ShareWay</a>
+    </div>
     <div class="col-sm-1 navbar_user_image">
       <% if logged_in? %>
         <p class="text-center"><%= render 'users/image', user: current_user %></p>
@@ -13,7 +13,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-end col-sm-11 flex-column" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse justify-content-end col-sm-10 flex-column" id="navbarSupportedContent">
       <ul class="navbar-nav w-100 nav-justified">
         <% if logged_in? %>
           <li class="nav-item dropdown">

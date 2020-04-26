@@ -14,6 +14,10 @@
  *= require_self
  */
 
+html, body {
+  font-family: "游ゴシック";
+}
+
 .jumbotron-extend {
     position: relative;
     height: 100vh;
@@ -67,9 +71,9 @@ a:visited { color: #003333; }
   /*以下装飾*/
   margin:0;/*余計な隙間を除く*/
   font-size: 20px;/*文字サイズ*/
-  border: solid gray 2px; /*線で囲う*/
+  border: solid black 2px; /*線で囲う*/
   padding: 7px;/*文字と線の間の余白*/
-  color: gray;/*文字色*/
+  color: black;/*文字色*/
   text-decoration: none;/*下線を表示させない*/
   }
 .find img {
@@ -250,6 +254,8 @@ a:visited { color: #003333; }
 }
 
 .navbar_user_image p {
+  margin: 0 auto;
+  padding:0;
   width:200px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -269,3 +275,12 @@ a:visited { color: #003333; }
   float:right;
 }
 
+.navbar_logo a {
+  font-size: 20px;
+  font-family: Segoe UI;
+  width:100px;
+  height:50px;
+  margin: 0 auto;
+  padding:0;
+  vertical-align: middle; /* 上下中央に寄せる */ 
+}

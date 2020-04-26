@@ -28,7 +28,12 @@ Rails.application.routes.draw do
         end
     end
     resources :relationships, only: [:create, :destroy]
-    resources :ways 
+    resources :ways do
+        collection do
+          get :search
+        end 
+    end
+   
     resources :favorite_hobbies, only: [:create, :destroy]
     resources :favorite_ways, only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
