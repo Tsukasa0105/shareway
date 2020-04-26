@@ -18,7 +18,11 @@
       </div> 
       <br><br> 
       <div class=" find">
-        <img src="assets/find.png" />
+        <% if Rails.env.development? %>
+          <img src="assets/find.png" />
+        <% else %>
+          <img src="https://res.cloudinary.com/hadnz0ql1/image/upload/v1587899873/undraw_web_search_eetr_ofygg5.png" />
+        <% end %>
         <%= link_to '楽しみ方を探す', search_ways_path, class: 'btn btn-lg' %>
       </div>
     </div>
