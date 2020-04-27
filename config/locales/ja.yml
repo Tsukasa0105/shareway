@@ -9,7 +9,6 @@ ja:
         image: トップ画像
         password: パスワード
         password_confirmation: パスワード確認
-    
     models:
       way: 楽しみ方
     attributes:
