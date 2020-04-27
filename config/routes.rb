@@ -34,6 +34,8 @@ Rails.application.routes.draw do
           get :search
         end 
     end
+    
+    resources :comments, only: [:show, :create]
    
     resources :favorite_hobbies, only: [:create, :destroy]
     resources :favorite_ways, only: [:create, :destroy]

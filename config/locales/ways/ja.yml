@@ -1,0 +1,10 @@
+ja:
+  activerecord: 
+    models:
+      way: 楽しみ方
+    attributes:
+      way:
+        name: 題名
+        hobby_id: 関連する趣味
+        image: トップ写真
+        content: 内容
