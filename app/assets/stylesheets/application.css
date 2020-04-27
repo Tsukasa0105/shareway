@@ -316,3 +316,11 @@ a:visited { color: #003333; }
 .comment {
   padding:0;
 }
+
+.way_edit_submit span {
+  padding:50px;
+}
+
+.way_edit_submit {
+  margin:50px 0;
+}
