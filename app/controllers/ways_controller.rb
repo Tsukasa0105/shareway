@@ -17,6 +17,7 @@ class WaysController < ApplicationController
     @comments = @way.comments
     @comment = @way.comments.build
   end
+  
   def new
     @way = Way.new
   end
