@@ -15,7 +15,7 @@ class WaysController < ApplicationController
     @way = Way.find(params[:id])
     @user = @way.user
     @comments = @way.comments
-    @comment = Comment.new
+    @comment = @way.comments.build
   end
   
   def new

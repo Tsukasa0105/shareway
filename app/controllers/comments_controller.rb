@@ -2,8 +2,8 @@ class CommentsController < ApplicationController
   before_action :require_user_logged_in
 
   def create
-    way = Way.find(params[:way_id])
-    @comment = way.comments.build(comment_params)
+    @way = Way.find(params[:way_id])
+    @comment = @way.comments.build(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
       flash[:success] = "コメントしました"
