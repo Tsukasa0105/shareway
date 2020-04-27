@@ -5,6 +5,9 @@ class WaysController < ApplicationController
   def index
     @like_ways=current_user.like_ways.order(id: :desc).page(params[:page])
     @like_hobbies=current_user.like_hobbies.order(id: :desc).page(params[:page])
+    @like_ways_each_hobby = @like_ways.group(:hobby_id).order('count(hobby_id) desc')
+    @like_ways_each_hobby_count = @like_ways_each_hobby.count
+
   end
 
   def show
