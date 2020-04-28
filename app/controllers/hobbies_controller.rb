@@ -15,9 +15,8 @@ class HobbiesController < ApplicationController
       flash[:success] = '登録しました。'
       redirect_to new_way_path
     else
-      @hobbies = current_user.hobbies.order(id: :desc).page(params[:page])
-      flash.now[:danger] = '登録に失敗しました。'
-      redirect_to new_hobby_path
+      flash[:warning] = '趣味を入力してください。'
+      render :new 
     end
   end
   
