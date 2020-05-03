@@ -59,7 +59,7 @@ class WaysController < ApplicationController
   
   def search 
     if params[:search] and params[:search] != ""
-      if params[:rate]
+      if params[:rate] and params[:rate] != ""
         split_search = params[:search].split(/[[:blank:]]+/)
         search_rate = params[:rate]
         @ways = [] 
@@ -73,7 +73,7 @@ class WaysController < ApplicationController
         @ways = Way.where('content::text LIKE(?)', "%#{search}%")
       end
     else
-      if params[:rate]
+      if params[:rate] and params[:rate] != ""
         search_rate = params[:rate]
         @ways = Way.where('rate::text LIKE(?)', "%#{search_rate}%")
       else
