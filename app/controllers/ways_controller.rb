@@ -5,14 +5,17 @@ class WaysController < ApplicationController
   def index
     @like_ways=current_user.like_ways.order(id: :desc).page(params[:page])
     @like_hobbies=current_user.like_hobbies.order(id: :desc).page(params[:page])
-=begin
-    @like_ways_each_hobby = @like_ways.group(:hobby_id).order('count(hobby_id) desc')
-    @like_ways_each_hobby_count = @like_ways_each_hobby.count
-=end
+    @like_ways_each_hobby = @like_ways.group(:hobby_id).order(count_id: :desc)
+    like_ways_each_hobby_count = @like_ways_each_hobby.count(:id)
+    keys = like_ways_each_hobby_count.keys
+    values = like_ways_each_hobby_count.values
+    keys = Hobby.where(id: keys).order_as_specified(id: keys).pluck(:name)
+    @like_ways_each_hobby_count = Hash[*keys.zip(values).flatten]
   end
 
   def show
     @way = Way.find(params[:id])
+    @hobby = Hobby.find(@way.hobby_id)
     @user = @way.user
     @comments = @way.comments
     @comment = @way.comments.build
@@ -55,13 +58,28 @@ class WaysController < ApplicationController
   end
   
   def search 
-    @ways = Way.search(params[:search])
+    split_search = params[:search].split(/[[:blank:]]+/)
+    search_rate = params[:rate]
+    if params[:search] ==""
+      if params[:rate] ==""
+        @ways = Way.all
+      else
+        @ways = Way.where('rate LIKE(?)', "%#{search_rate}%")
+      end
+    else
+      @ways = [] 
+      split_search.each do |search|
+        next if search == "" 
+        @ways += Way.where('content LIKE(?) AND rate LIKE(?)', "%#{search}%", "%#{search_rate}%")
+      end 
+      @ways.uniq!
+    end
   end
   
   private
   
   def way_params
-    params.require(:way).permit(:name, :hobby_id, :image, :content)
+    params.require(:way).permit(:name, :hobby_id, :image, :content, :rate)
   end
   
   def correct_user

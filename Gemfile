@@ -76,3 +76,8 @@ end
 gem 'rails-i18n'
 
 gem 'chartkick'
+
+gem 'order_as_specified'
+
+gem 'jquery-rails'
+gem 'jquery-turbolinks'

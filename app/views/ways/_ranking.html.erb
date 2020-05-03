@@ -15,6 +15,19 @@
           <p><%= link_to way.name, way_path(way) %></p>
         </td>
         <td>
+          <%= way.rate %>
+          <% if way.rate == 1 %>
+            <span class="beginner">対象：初級者</span>
+          <% elsif way.rate == 2 %>
+            <span class="middle">対象：中級者</span>
+          <% elsif way.rate == 3 %>
+            <span class="hard">対象：上級者</span>
+          <% else %>
+            <span class="unknown">対象：不明</span>
+          <% end %>
+          <br>
+        </td>
+        <td>
           <span><i class="fas fa-star"></i><%= way.favorite_ways_counts(way) %></span>          
         </td>
         <td class="ranking_decoration">

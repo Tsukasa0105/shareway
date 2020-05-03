@@ -21,9 +21,23 @@
     <div class="col-sm-1 way_show_userimage">
       <%= render 'users/image', user: @user %>
     </div>
-    <div class="col-sm-2 way_show_username">
+    <div class="col-sm-7 way_show_username">
         <p><%= link_to @way.user.name, user_path(@way.user) %></p> 
     </div> 
+    <div class="col-sm-4 way_show_hobbyname">
+        <% if @way.rate == 1 %>
+          <span class="beginner">対象：初級者</span>
+        <% elsif @way.rate == 2 %>
+          <span class="middle">対象：中級者</span>
+        <% elsif @way.rate == 3 %>
+          <span class="hard">対象：上級者</span>
+        <% else %>
+          <span class="unknown">対象：不明</span>
+        <% end %>
+        <br>
+        <p><%= @hobby.name %></p>
+        <p>関連する趣味：</p>
+    </div>
 </div>
 
 <Hr Width="100%">

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :hobbies, only: [:index, :create, :new, :destroy] do
         member do
           post :new
+          get :hobby_ways
         end
     end
     resources :relationships, only: [:create, :destroy]

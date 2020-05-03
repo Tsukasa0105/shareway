@@ -26,6 +26,11 @@ class HobbiesController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
   
+  def hobby_ways
+    @hobby = Hobby.find(params[:id])
+    @ways = Way.where(id: @hobby.id)
+  end
+  
   private
   
   def hobby_params

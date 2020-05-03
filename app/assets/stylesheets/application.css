@@ -97,6 +97,25 @@ a:visited { color: #003333; }
     float:right;
 }
 
+.beginner {
+  float:right;
+  color:green;
+}
+
+.middle {
+  float:right;
+  color:orange;
+}
+
+.hard {
+  float:right;
+  color:red;
+}
+
+.unknown {
+  float:right;
+}
+
 .ways_thead {
     background-color: #CCFFCC
 }
@@ -186,7 +205,11 @@ a:visited { color: #003333; }
 
 .way_show_username p {
   max-width: 400px; 
-  margin: 0 auto; 
+  margin:0; 
+}
+
+.way_show_hobbyname p {
+  float:right;
 }
 
 .way_show_name h4 {
@@ -323,4 +346,9 @@ a:visited { color: #003333; }
 
 .way_edit_submit {
   margin:50px 0;
+}
+
+.syumibetsu {
+  padding:0;
+  margin:0 auto;
 }

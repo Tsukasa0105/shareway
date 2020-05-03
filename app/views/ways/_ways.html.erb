@@ -16,8 +16,33 @@
           <td>
             <div>
               <p style="display: inline-block"><%= link_to way.name, way_path(way) %></p>
+              
+<!--星-->
+              <!-- <script type="text/javascript">
+              $(function() {
+                $('#star-rate-<%= way.id %>').raty();
+                  size: 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  readOnly: true,
+                  score: <%= way.rate %>,
+                });
+              </script>  
+              <div id="star-rate-<%= way.id %>"></div>-->
+<!--/星-->
+
               <!-- <%= render 'favorite_ways/favorite_way_button', way: way %> -->
-              <span class="created_at"><%= way.created_at.to_s(:datetime) %>　　</span>
+              <span class="created_at"><%= way.created_at.to_s(:datetime) %></span>
+              <br><br>
+              <% if way.rate == 1 %>
+                <span class="beginner">対象：初級者</span>
+              <% elsif way.rate == 2 %>
+                <span class="middle">対象：中級者</span>
+              <% elsif way.rate == 3 %>
+                <span class="hard">対象：上級者</span>
+              <% else %>
+                <span class="unknown">対象：不明</span>
+              <% end %>
             </div>
           </td>
         </tr>        

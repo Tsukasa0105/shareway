@@ -7,18 +7,12 @@ class Way < ApplicationRecord
   
   validates :content, presence: true, length: { maximum: 4000 }
   validates :name, presence: true, length: { maximum: 40 }
+  validates :rate, presence: true, inclusion: { in: 1..3 }
+  
   
   mount_uploader :image, ImageUploader
   
   def favorite_ways_counts(way)
     FavoriteWay.where(way_id: way.id).count
   end
-  
-  def self.search(search)
-    if search
-      Way.where(['content LIKE ?', "%#{search}%"])
-    else
-      Way.all
-    end
-  end 
 end
