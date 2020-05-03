@@ -65,17 +65,17 @@ class WaysController < ApplicationController
         @ways = [] 
         split_search.each do |search|
           next if search == "" 
-          @ways += Way.where('content LIKE(?) AND rate LIKE(?)', "%#{search}%", "%#{search_rate}%")
+          @ways += Way.where('content::text LIKE(?) AND rate::text LIKE(?)', "%#{search}%", "%#{search_rate}%")
         end 
         @ways.uniq!
       else
         split_search = params[:search].split(/[[:blank:]]+/)
-        @ways = Way.where('content LIKE(?)', "%#{search}%")
+        @ways = Way.where('content::text LIKE(?)', "%#{search}%")
       end
     else
       if params[:rate]
         search_rate = params[:rate]
-        @ways = Way.where('rate LIKE(?)', "%#{search_rate}%")
+        @ways = Way.where('rate::text LIKE(?)', "%#{search_rate}%")
       else
         @ways = Way.all 
       end
