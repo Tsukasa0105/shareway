@@ -7,7 +7,7 @@ class Way < ApplicationRecord
   
   validates :content, presence: true, length: { maximum: 4000 }
   validates :name, presence: true, length: { maximum: 40 }
-  validates :rate, presence: true, inclusion: { in: 1..3 }
+  validates :rate, presence: true, inclusion: { in: 0..3 }
   
   
   mount_uploader :image, ImageUploader

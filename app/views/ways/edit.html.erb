@@ -22,6 +22,12 @@
             <%= f.label :content, '内容' %>
             <%= f.text_area :content, class: 'form-control', rows: 50 %>
           </div>
+          
+          <div class="form-group" id="star">
+            <%= f.label :rate,'難易度 ' %>
+            <%= f.text_field :rate, class: 'form-control', placeholder:'0～3の数字で入力してください（0:不明、1:初心者、2:中級者、3:上級者）' %>
+          </div>
+          
           <span><%= f.submit '変更', class: 'btn btn-primary btn-block' %></span>
       <% end %>
     </aside>
