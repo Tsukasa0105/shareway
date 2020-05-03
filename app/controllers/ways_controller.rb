@@ -59,7 +59,7 @@ class WaysController < ApplicationController
   
   def search 
     if params[:search] and params[:search] != ""
-      if params[:rate] and params[:rate] != ""
+      if params[:rate]
         split_search = params[:search].split(/[[:blank:]]+/)
         search_rate = params[:rate]
         @ways = [] 
