@@ -85,6 +85,10 @@ a:visited { color: #003333; }
       float:right;
 }
 
+.enjoyed_way_button {
+      float:right;
+}
+
 .follow_button {
       float:right;
 }
@@ -302,6 +306,10 @@ a:visited { color: #003333; }
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden; 
+}
+
+.ranking_decoration {
+  width:200px;
 }
 
 .navbar_user_image p {

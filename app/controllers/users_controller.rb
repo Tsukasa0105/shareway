@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :edit, :followings, :followers, :like_hobbies, :like_ways]
+  before_action :require_user_logged_in, only: [:index, :show, :edit, :followings, :followers, :like_hobbies, :like_ways, :satisfied_ways]
   def index
     @users = User.order(id: :desc).page(params[:page]).per(20)
   end
@@ -76,6 +76,12 @@ class UsersController < ApplicationController
   def like_ways
     @user = User.find(params[:id])
     @like_ways = @user.like_ways.page(params[:page])
+    counts(@user)
+  end
+  
+  def satisfied_ways
+    @user = User.find(params[:id])
+    @satisfied_ways = @user.satisfied_ways.page(params[:page])
     counts(@user)
   end
   

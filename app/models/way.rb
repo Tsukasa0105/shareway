@@ -3,6 +3,7 @@ class Way < ApplicationRecord
   belongs_to :hobby
   
   has_many :favorite_ways, dependent: :destroy
+  has_many :enjoyed_ways, dependent: :destroy
   has_many :comments
   
   validates :content, presence: true, length: { maximum: 4000 }

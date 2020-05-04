@@ -1,15 +1,39 @@
   <% if current_user.favorite_way?(way) %>
-    <div style="display:inline-block" class="favorite_way_button">
-      <%= form_with(model: current_user.favorite_ways.find_by(way_id: way.id), local: true, method: :delete) do |f| %>
-        <%= hidden_field_tag :way_id, way.id, id: "way_id_#{way.id}" %>
-        <%= f.submit 'お気に入り解除', class: 'btn btn-secondary btn-sm' %>
-      <% end %>
-    </div>
+    <% if current_user.enjoyed_way?(way) %>
+      <div style="display:inline-block" class="enjoyed_way_button">
+        <%= form_with(model: current_user.enjoyed_ways.find_by(way_id: way.id), local: true, method: :delete) do |f| %>
+          <%= hidden_field_tag :way_id, way.id, id: "way_id_#{way.id}" %>
+          <%= button_tag type: 'submit', class: 'btn btn-secondary btn-sm' do %>
+            <i class="fas fa-heart"></i>解除
+          <% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <div style="display:inline-block" class="favorite_way_button">
+        <%= form_with(model: current_user.favorite_ways.find_by(way_id: way.id), local: true, method: :delete) do |f| %>
+          <%= hidden_field_tag :way_id, way.id, id: "way_id_#{way.id}" %>
+          <%= button_tag type: 'submit', class: 'btn btn-secondary btn-sm' do %>
+            <i class="fas fa-star"></i>解除
+          <% end %>
+        <% end %>
+      </div>
+  
+      <div style="display:inline-block" class="enjoyed_way_button">
+        <%= form_with(model: current_user.enjoyed_ways.build, local: true) do |f| %>
+          <%= hidden_field_tag :way_id, way.id, id: "way_id_#{way.id}" %>
+          <%= button_tag type: 'submit', class: 'btn btn-light btn-sm' do %>
+            <i class="fas fa-heart"></i>満足
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   <% else %>
     <div style="display:inline-block" class="favorite_way_button">
       <%= form_with(model: current_user.favorite_ways.build, local: true) do |f| %>
         <%= hidden_field_tag :way_id, way.id, id: "way_id_#{way.id}" %>
-        <%= f.submit '　お気に入り　', class: 'btn btn-light btn-sm' %>
+        <%= button_tag type: 'submit', class: 'btn btn-light btn-sm' do %>
+          <i class="fas fa-star"></i>気になる
+        <% end %>
       <% end %>
     </div>
     <% end %>

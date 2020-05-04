@@ -23,9 +23,18 @@
               <div class="dropdown-item"><%= link_to 'フォロー', followings_user_path(current_user) %></div>
               <div class="dropdown-item"><%= link_to 'フォロワー', followers_user_path(current_user) %></div>
             </div>
-          <li class="nav-item"><%= link_to 'お気に入りの趣味', like_hobbies_user_path(current_user) %></li>
-          <li class="nav-item"><%= link_to 'お気に入りの楽しみ方', ways_path %></li>
-          <li class="nav-item"><%= link_to '趣味一覧', hobbies_path %></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">趣味</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-item"><%= link_to '一覧', hobbies_path %></div> 
+              <div class="dropdown-item"><%= link_to 'お気に入り', like_hobbies_user_path(current_user) %></div>
+            </div>
+          <li class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">楽しみ方</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-item"><%= link_to '気になる', ways_path %></div> 
+              <div class="dropdown-item"><%= link_to '満足', satisfied_ways_user_path(current_user) %></div>
+            </div>
           <li class="nav-item dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">アカウント</a>
             <div class="dropdown-menu">

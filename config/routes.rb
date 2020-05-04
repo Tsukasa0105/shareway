@@ -19,6 +19,7 @@ Rails.application.routes.draw do
           get :followers
           get :like_hobbies
           get :like_ways
+          get :satisfied_ways
         end
     end
     
@@ -40,5 +41,6 @@ Rails.application.routes.draw do
    
     resources :favorite_hobbies, only: [:create, :destroy]
     resources :favorite_ways, only: [:create, :destroy]
+    resources :enjoyed_ways, only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

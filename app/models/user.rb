@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :like_hobbies, through: :favorite_hobbies, source: :hobby
   has_many :favorite_ways
   has_many :like_ways, through: :favorite_ways, source: :way
+  has_many :enjoyed_ways
+  has_many :satisfied_ways, through: :enjoyed_ways, source: :way
   has_many :comments
   
   before_save { self.email.downcase! }
@@ -66,4 +68,18 @@ class User < ApplicationRecord
   def favorite_way?(way)
     self.like_ways.include?(way)
   end
+  
+  def enjoyed_way(way)
+      enjoyed_ways.find_or_create_by(way_id: way.id)
+  end
+
+  def unenjoyed_way(way)
+    enjoyed_way = enjoyed_ways.find_by(way_id: way.id)
+    enjoyed_way.destroy if enjoyed_way
+  end
+  
+  def enjoyed_way?(way)
+    self.satisfied_ways.include?(way)
+  end
+  
 end
