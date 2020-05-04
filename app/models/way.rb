@@ -16,4 +16,8 @@ class Way < ApplicationRecord
   def favorite_ways_counts(way)
     FavoriteWay.where(way_id: way.id).count
   end
+  
+  def enjoyed_ways_counts(way)
+    EnjoyedWay.where(way_id: way.id).count
+  end
 end

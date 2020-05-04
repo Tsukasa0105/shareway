@@ -2,13 +2,15 @@
   <% if current_user.favorite_hobby?(hobby) %>
     <%= form_with(model: current_user.favorite_hobbies.find_by(hobby_id: hobby.id), local: true, method: :delete) do |f| %>
       <%= hidden_field_tag :hobby_id, hobby.id, id: "hobby_id_#{hobby.id}" %>
-      <%= f.submit 'お気に入り解除', class: 'btn btn-secondary btn-sm' %>
+      <%= button_tag type: 'submit', class: 'btn btn-secondary btn-sm'  do %>
+        <i class="fas fa-star"></i>解除
+      <% end %>
     <% end %>
   <% else %>
     <%= form_with(model: current_user.favorite_hobbies.build, local: true) do |f| %>
       <%= hidden_field_tag :hobby_id, hobby.id, id: "hobby_id_#{hobby.id}" %>
       <%= button_tag type: 'submit', class: 'btn btn-light btn-sm' do %>
-        <i class="fas fa-star"></i>お気に入り
+        <i class="fas fa-star"></i>気になる
       <% end %>
     <% end %>
   <% end %>  

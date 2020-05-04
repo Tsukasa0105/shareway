@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         member do
           get :ways_ranking
           get :hobbies_ranking
+          get :how_to_use
         end
     end
     
