@@ -74,7 +74,7 @@ class WaysController < ApplicationController
       end
     else
       if params[:rate]
-        if params[:rate] == 1 or params[:rate] == 2 or params[:rate] == 3
+        if params[:rate] == 1.0 or params[:rate] == 2.0 or params[:rate] == 3.0
           search_rate = params[:rate]
           @ways = Way.where('rate::text LIKE(?)', "%#{search_rate}%")
         else
