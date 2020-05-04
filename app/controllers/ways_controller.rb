@@ -73,9 +73,13 @@ class WaysController < ApplicationController
         @ways = Way.where('content::text LIKE(?)', "%#{search}%")
       end
     else
-      if params[:rate] != "" or params[:rate] != 0
-        search_rate = params[:rate]
-        @ways = Way.where('rate::text LIKE(?)', "%#{search_rate}%")
+      if params[:rate]
+        if params[:rate] != "" or params[:rate] != 0
+          search_rate = params[:rate]
+          @ways = Way.where('rate::text LIKE(?)', "%#{search_rate}%")
+        else
+          @ways = Way.all
+        end
       else
         @ways = Way.all 
       end
