@@ -5,12 +5,14 @@ class WaysController < ApplicationController
   def index
     @like_ways=current_user.like_ways.order(id: :desc).page(params[:page])
     @like_hobbies=current_user.like_hobbies.order(id: :desc).page(params[:page])
+=begin
     @like_ways_each_hobby = @like_ways.group(:hobby_id).order(count_id: :desc)
     like_ways_each_hobby_count = @like_ways_each_hobby.count(:id)
     keys = like_ways_each_hobby_count.keys
     values = like_ways_each_hobby_count.values
     keys = Hobby.where(id: keys).order_as_specified(id: keys).pluck(:name)
     @like_ways_each_hobby_count = Hash[*keys.zip(values).flatten]
+=end
   end
 
   def show
